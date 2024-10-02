@@ -174,6 +174,7 @@
     cifs-utils
     gnat14
     git
+    devenv
   ];
 
   #Install Nvidia Drivers
