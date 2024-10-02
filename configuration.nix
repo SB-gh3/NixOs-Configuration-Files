@@ -107,6 +107,9 @@
     ];
   };
 
+  #Set Trusted User
+  nix.extraOptions = ''trusted-users = root spencerb'';
+
   #KDE Plasma Excludes
   environment.plasma5.excludePackages = with pkgs.libsForQt5; 
   [
