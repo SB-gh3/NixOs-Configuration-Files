@@ -15,7 +15,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   #Automatic Garbage Collecting
-  boot.loader.systemd-boot.configurationLimit = 50;
+  boot.loader.systemd-boot.configurationLimit = 25;
 
   nix.gc = 
   {
@@ -190,13 +190,6 @@
         libvdpau-va-gl
       ];
     };
-  };
-
-  #Enable Ollama
-  services.ollama = 
-  {
-    enable = true;
-    acceleration = "cuda";
   };
 
   #Enables support for SANE scanners
