@@ -114,6 +114,7 @@
   environment.plasma5.excludePackages = with pkgs.libsForQt5; 
   [
     konsole
+    kate
   ];
 
   #Remove Sudo Password
