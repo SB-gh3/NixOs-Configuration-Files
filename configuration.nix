@@ -99,7 +99,7 @@
   {
     isNormalUser = true;
     description = "Spencer Bailey";
-    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "docker" ];
     packages = with pkgs; 
     [
       #kdePackages.kate
@@ -192,6 +192,13 @@
         libvdpau-va-gl
       ];
     };
+  };
+
+  #Enable Docker
+  virtualisation.docker.rootless = 
+  {
+    enable = true;
+    setSocketVariable = true;
   };
 
   #Enables support for SANE scanners
