@@ -165,8 +165,7 @@
     lf
     godot_4
     yt-dlp
-    libgcc
-    gnat14
+    gnat
     git
   ];
 
