@@ -165,8 +165,9 @@
     lf
     godot_4
     yt-dlp
-    gnat
+    libgcc
     git
+    distrobox
   ];
 
   #Install Nvidia Drivers
