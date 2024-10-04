@@ -159,22 +159,11 @@
     dpkg
     rustdesk-flutter
     btop
-    asciiquarium-transparent
-    neo-cowsay
     tmux
-    ollama
     blackbox-terminal
-    cbonsai
-    vitetris
-    mapscii
-    figlet
     lf
     godot_4
     yt-dlp
-    ntfs3g
-    exfat
-    nfs-utils
-    cifs-utils
     gnat14
     git
   ];
