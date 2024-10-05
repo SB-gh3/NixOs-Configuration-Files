@@ -17,7 +17,7 @@
   #Automatic Garbage Collecting
   boot.loader.systemd-boot.configurationLimit = 25;
 
-  nix.gc = 
+  nix.gc =
   {
     automatic = true;
     dates = "weekly";
@@ -55,7 +55,7 @@
   #Enable Flatpak
   services.flatpak.enable = true;
 
-  systemd.services.flatpak-repo = 
+  systemd.services.flatpak-repo =
   {
     wantedBy = [ "multi-user.target" ];
     path = [ pkgs.flatpak ];
@@ -65,7 +65,7 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = 
+  services.xserver.xkb =
   {
     layout = "us";
     variant = "";
@@ -77,7 +77,7 @@
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = 
+  services.pipewire =
   {
     enable = true;
     alsa.enable = true;
@@ -95,12 +95,12 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.spencerb = 
+  users.users.spencerb =
   {
     isNormalUser = true;
     description = "Spencer Bailey";
     extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "docker" ];
-    packages = with pkgs; 
+    packages = with pkgs;
     [
       #kdePackages.kate
       #thunderbird
@@ -111,7 +111,7 @@
   nix.extraOptions = ''trusted-users = root spencerb'';
 
   #KDE Plasma Excludes
-  environment.plasma5.excludePackages = with pkgs.libsForQt5; 
+  environment.plasma5.excludePackages = with pkgs.libsForQt5;
   [
     konsole
     kate
@@ -128,7 +128,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  environment.variables = 
+  environment.variables =
   {
     GBM_BACKEND = "nvidia-drm";
     LIBVA_DRIVER_NAME = "nvidia";
@@ -137,7 +137,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; 
+  environment.systemPackages = with pkgs;
   [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
@@ -165,12 +165,13 @@
     distrobox
     zed-editor
     clang-tools
+    libclang
   ];
 
   #Install Nvidia Drivers
-  hardware = 
+  hardware =
   {
-    nvidia = 
+    nvidia =
     {
       modesetting.enable = true;
       powerManagement.enable = true;
@@ -179,10 +180,10 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       nvidiaSettings = true;
     };
-    graphics = 
+    graphics =
     {
       enable32Bit = true;
-      extraPackages = with pkgs; 
+      extraPackages = with pkgs;
       [
         nvidia-vaapi-driver
         vaapiVdpau
@@ -193,14 +194,14 @@
 
   #Enable Docker
   virtualisation.docker.enable = true;
-  virtualisation.docker.rootless = 
+  virtualisation.docker.rootless =
   {
     enable = true;
     setSocketVariable = true;
   };
 
   #Tmux Config
-  programs.tmux = 
+  programs.tmux =
   {
     extraConfig = ''set -g default-command "/home/spencerb/.bashrc"'';
   };
