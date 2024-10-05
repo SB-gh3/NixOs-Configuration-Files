@@ -164,7 +164,7 @@
     git
     distrobox
     zed-editor
-    libclang
+    clang-tools
   ];
 
   #Install Nvidia Drivers
