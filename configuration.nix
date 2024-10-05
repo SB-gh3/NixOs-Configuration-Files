@@ -25,6 +25,9 @@
     persistent = true;
   };
 
+  #Latest Kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -160,7 +163,7 @@
     lf
     godot_4
     yt-dlp
-    libgccjit
+    libgcc
     git
     distrobox
     zed-editor
