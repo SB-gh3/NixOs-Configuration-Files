@@ -160,7 +160,7 @@
     lf
     godot_4
     yt-dlp
-    libgcc
+    libgccjit
     git
     distrobox
     zed-editor
@@ -178,9 +178,9 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       nvidiaSettings = true;
     };
-    opengl = 
+    graphics = 
     {
-      driSupport32Bit = true;
+      enable32Bit = true;
       extraPackages = with pkgs; 
       [
         nvidia-vaapi-driver
