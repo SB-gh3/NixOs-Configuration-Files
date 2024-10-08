@@ -197,12 +197,6 @@
     setSocketVariable = true;
   };
 
-  #Tmux Config
-  programs.tmux =
-  {
-    extraConfig = ''set -g default-command "/home/spencerb/.bashrc"'';
-  };
-
   #Enables support for SANE scanners
   hardware.sane.enable = true;
 
