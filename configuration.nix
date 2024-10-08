@@ -162,7 +162,8 @@
     yt-dlp
     git
     distrobox
-    gccgo14
+    nix-direnv
+    libgcc
   ];
 
   #Install Nvidia Drivers
