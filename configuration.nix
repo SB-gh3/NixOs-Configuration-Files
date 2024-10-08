@@ -160,9 +160,9 @@
     lf
     godot_4
     yt-dlp
-    libgcc
     git
     distrobox
+    gccgo14
   ];
 
   #Install Nvidia Drivers
