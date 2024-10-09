@@ -164,6 +164,9 @@
     distrobox
     nix-direnv
     libgcc
+    gccgo14
+    rustc
+    cargo
   ];
 
   #Install Nvidia Drivers
