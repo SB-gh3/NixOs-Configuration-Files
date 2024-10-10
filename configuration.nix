@@ -167,6 +167,9 @@
     gccgo14
     rustc
     cargo
+    pkg-config
+    alsa-oss
+    alsa-utils
   ];
 
   #Install Nvidia Drivers
