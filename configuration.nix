@@ -164,12 +164,14 @@
     distrobox
     nix-direnv
     libgcc
-    gccgo14
     rustc
     cargo
+    go
     pkg-config
     alsa-oss
+    alsa-lib
     alsa-utils
+    gopls
   ];
 
   #Install Nvidia Drivers
