@@ -172,6 +172,7 @@
     alsa-lib
     alsa-utils
     gopls
+    fanctl
   ];
 
   #Install Nvidia Drivers
