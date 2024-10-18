@@ -163,16 +163,14 @@
     git
     distrobox
     nix-direnv
-    libgcc
     rustc
     cargo
     go
     pkg-config
-    alsa-oss
-    alsa-lib
-    alsa-utils
     gopls
-    fanctl
+    gnat14
+    gnuplot
+    vlc
   ];
 
   #Install Nvidia Drivers
