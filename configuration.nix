@@ -171,6 +171,7 @@
     gnat14
     gnuplot
     vlc
+    nfs-utils
   ];
 
   #Install Nvidia Drivers
