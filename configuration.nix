@@ -171,7 +171,10 @@
     gnat14
     gnuplot
     vlc
-    nfs-utils
+    socat
+    quickemu
+    protontricks
+    rustdesk-server
   ];
 
   #Install Nvidia Drivers
