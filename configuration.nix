@@ -175,6 +175,10 @@
     quickemu
     protontricks
     rustdesk-server
+    libreoffice
+    util-linux
+    cudatoolkit
+    gnumake42
   ];
 
   #Install Nvidia Drivers
@@ -200,6 +204,10 @@
       ];
     };
   };
+
+  #CUDA support
+  nixpkgs.config.cudaSupport = true;
+  nixpkgs.config.cudaCapabilities = [ "8.9" ];
 
   #Enable Docker
   virtualisation.docker.enable = true;
