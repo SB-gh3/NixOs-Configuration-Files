@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <nix-ld/modules/nix-ld.nix>
     ];
 
   # Bootloader.
@@ -168,7 +169,6 @@
     go
     pkg-config
     gopls
-    gnat14
     gnuplot
     vlc
     socat
@@ -178,7 +178,14 @@
     libreoffice
     util-linux
     cudatoolkit
-    gnumake42
+    gnumake
+    libgcc
+    getopt
+    flex
+    bison
+    bc
+    binutils
+    cudaPackages.cuda_nvcc
   ];
 
   #Install Nvidia Drivers
@@ -189,7 +196,7 @@
       modesetting.enable = true;
       powerManagement.enable = true;
       powerManagement.finegrained = false;
-      open = true;
+      open = false;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       nvidiaSettings = true;
     };
@@ -222,6 +229,9 @@
 
   #Firmware stuff - not entirely sure
   hardware.enableRedistributableFirmware = true;
+
+  #nix-ld makes statically linked libraries global
+  programs.nix-ld.dev.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
