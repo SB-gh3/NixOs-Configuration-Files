@@ -8,10 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <nix-ld/modules/nix-ld.nix>
     ];
 
-  # Bootloader.
+  # Bootloader and Kernel
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -164,8 +164,7 @@
     git
     distrobox
     nix-direnv
-    rustc
-    cargo
+    rustup
     go
     pkg-config
     gopls
@@ -180,12 +179,14 @@
     cudatoolkit
     gnumake
     libgcc
+    gnat14
     getopt
     flex
     bison
     bc
     binutils
     cudaPackages.cuda_nvcc
+    gparted
   ];
 
   #Install Nvidia Drivers
@@ -229,9 +230,6 @@
 
   #Firmware stuff - not entirely sure
   hardware.enableRedistributableFirmware = true;
-
-  #nix-ld makes statically linked libraries global
-  programs.nix-ld.dev.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
