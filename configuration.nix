@@ -187,6 +187,11 @@
     binutils
     cudaPackages.cuda_nvcc
     gparted
+    obs-studio
+    inkscape-with-extensions
+    gimp-with-plugins
+    exfat
+    exfatprogs
   ];
 
   #Install Nvidia Drivers
@@ -197,7 +202,7 @@
       modesetting.enable = true;
       powerManagement.enable = true;
       powerManagement.finegrained = false;
-      open = false;
+      open = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       nvidiaSettings = true;
     };
@@ -224,6 +229,9 @@
     enable = true;
     setSocketVariable = true;
   };
+
+  #Makes shebangs work properly
+  services.envfs.enable = true;
 
   #Enables support for SANE scanners
   hardware.sane.enable = true;
