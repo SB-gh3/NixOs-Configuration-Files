@@ -190,8 +190,6 @@
     obs-studio
     inkscape-with-extensions
     gimp-with-plugins
-    exfat
-    exfatprogs
   ];
 
   #Install Nvidia Drivers
@@ -229,9 +227,6 @@
     enable = true;
     setSocketVariable = true;
   };
-
-  #Makes shebangs work properly
-  services.envfs.enable = true;
 
   #Enables support for SANE scanners
   hardware.sane.enable = true;
