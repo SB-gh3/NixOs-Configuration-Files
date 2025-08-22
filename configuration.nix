@@ -44,9 +44,9 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
+  services.xserver.enable = false;
 
-  # Enable the KDE Plasma 5 Environment.
+  # Enable the KDE Plasma 6 Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
