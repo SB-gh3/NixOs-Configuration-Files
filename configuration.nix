@@ -124,6 +124,9 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
 
+  # Enable hyprland
+  programs.hyprland.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs;
@@ -180,6 +183,7 @@
     gimp-with-plugins
     ghostty
     hyprland
+    kitty
   ];
 
   #Install Nvidia Drivers
