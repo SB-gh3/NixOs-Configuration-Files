@@ -124,6 +124,9 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
 
+  # Enable Teamviewer
+  services.teamviewer.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs;
@@ -181,6 +184,7 @@
     ghostty
     cmake
     libGLU
+    kdePackages.xdg-desktop-portal-kde
   ];
 
   #Install Nvidia Drivers
