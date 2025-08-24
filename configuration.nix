@@ -96,6 +96,28 @@
     ];
   };
 
+  #Automount drives on startup
+  fileSystems."/mnt/Games" = 
+  {
+    device = "UUID=32d18297-49ec-4c60-82c9-92ae6f4b8e0d"; #UUID
+    fsType = "ext4"; 
+    options = [ "nofail" "x-systemd.before=local-fs.target" ];
+  };
+
+  fileSystems."/mnt/Extra Games" = 
+  {
+    device = "UUID=4fdbb1b8-3ce3-4515-a984-3cda497e801d";
+    fsType = "ext4";
+    options = [ "nofail" "x-systemd.before=local-fs.target" ];
+  };
+
+  fileSystems."/mnt/SSD Games" = 
+  {
+    device = "UUID=60da2b36-318b-4530-ba0c-03fee4280706";
+    fsType = "ext4";
+    options = [ "nofail" "x-systemd.before=local-fs.target" ];
+  };
+
   #Set Trusted User
   nix.extraOptions = ''trusted-users = root spencerb'';
 
@@ -124,8 +146,8 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
 
-  # Enable Teamviewer
-  services.teamviewer.enable = true;
+  #Enable Hyprland
+  programs.hyprland.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -185,6 +207,8 @@
     cmake
     libGLU
     kdePackages.xdg-desktop-portal-kde
+    hyprland
+    kitty
   ];
 
   #Install Nvidia Drivers
