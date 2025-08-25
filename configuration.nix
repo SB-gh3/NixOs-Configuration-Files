@@ -170,7 +170,6 @@
     rustdesk-flutter
     btop
     tmux
-    blackbox-terminal
     lf
     godot_4
     yt-dlp
@@ -208,7 +207,8 @@
     libGLU
     kdePackages.xdg-desktop-portal-kde
     hyprland
-    kitty
+    waybar
+    wofi
   ];
 
   #Install Nvidia Drivers
