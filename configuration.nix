@@ -3,12 +3,20 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { lib, config, pkgs, ... }:
-
+let
+  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      (import "${home-manager}/nixos")
     ];
+
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.backupFileExtension = "backup";
+  home-manager.users.spencerb = import ./home.nix;
 
   # Bootloader and Kernel
   #boot.kernelPackages = pkgs.linuxPackages_latest;
