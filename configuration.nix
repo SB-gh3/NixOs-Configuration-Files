@@ -161,6 +161,7 @@
     enable = true;
     xwayland.enable = true;
   };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs;
@@ -224,6 +225,8 @@
     pciutils
     ihaskell
     python314
+    qemu_kvm
+    spice
   ];
 
   #Install Nvidia Drivers
@@ -260,7 +263,7 @@
   {
     enable = true;
     setSocketVariable = true;
-  };
+  };  
 
   #Enables support for SANE scanners
   hardware.sane.enable = true;
