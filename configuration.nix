@@ -156,8 +156,11 @@
   };
 
   #Enable Hyprland
-  programs.hyprland.enable = true;
-
+  programs.hyprland = 
+  {
+    enable = true;
+    xwayland.enable = true;
+  };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs;
@@ -218,6 +221,9 @@
     hyprland
     waybar
     wofi
+    pciutils
+    ihaskell
+    python314
   ];
 
   #Install Nvidia Drivers
