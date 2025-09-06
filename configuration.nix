@@ -225,8 +225,9 @@
     pciutils
     ihaskell
     python314
-    qemu_kvm
     spice
+    nerd-fonts._0xproto
+    rofi-wayland
   ];
 
   #Install Nvidia Drivers
