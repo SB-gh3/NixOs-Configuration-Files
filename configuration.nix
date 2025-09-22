@@ -238,6 +238,8 @@
     spice
     nerd-fonts._0xproto
     rofi-wayland
+    ihaskell
+    stack
   ];
 
   #Install Nvidia Drivers
