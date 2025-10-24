@@ -131,11 +131,11 @@
   nix.extraOptions = ''trusted-users = root spencerb'';
 
   #KDE Plasma Excludes
-  environment.plasma6.excludePackages = with pkgs.libsForQt5;
-  [
-    konsole
-    kate
-  ];
+  # environment.plasma6.excludePackages = with pkgs.libsForQt5;
+  # [
+  #   konsole
+  #   kate
+  # ];
 
   #Remove Sudo Password
   security.sudo.wheelNeedsPassword = false;
@@ -154,6 +154,15 @@
     LIBVA_DRIVER_NAME = "nvidia";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
+
+  #Configure udev rules for Keychron K8 Max
+  services.udev.extraRules = ''
+    #Rule for keyboard itself
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="0a83", MODE="0660", TAG+="uaccess"
+
+    # Rule for the STM32 Bootloader (DFU Mode) for firmware flashing
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE="0660", TAG+="uaccess"
+  ''; 
 
   #Enable Hyprland
   programs.hyprland = 
@@ -237,9 +246,9 @@
     python314
     spice
     nerd-fonts._0xproto
-    rofi-wayland
-    ihaskell
-    stack
+    rofi
+    ffmpeg_8-full
+    usbutils
   ];
 
   #Install Nvidia Drivers
