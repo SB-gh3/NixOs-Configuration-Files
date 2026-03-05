@@ -171,6 +171,10 @@
     xwayland.enable = true;
   };
 
+  #Enable Bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   #Sunshine/Moonlight RDP
   # security.wrappers.sunshine = 
   # {
@@ -196,7 +200,7 @@
     vulkan-tools
     steam
     jdk
-    wineWowPackages.full
+    wineWow64Packages.full
     winetricks
     easyeffects
     lolcat
@@ -249,6 +253,10 @@
     rofi
     ffmpeg_8-full
     usbutils
+    file
+    pulseaudioFull
+    filezilla
+    radare2
   ];
 
   #Install Nvidia Drivers
@@ -269,7 +277,7 @@
       extraPackages = with pkgs;
       [
         nvidia-vaapi-driver
-        vaapiVdpau
+        libva-vdpau-driver
         libvdpau-va-gl
       ];
     };
